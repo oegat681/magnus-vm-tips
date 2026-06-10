@@ -28,14 +28,14 @@ function MatchRow({ match, value, onChange, odds }: {
         )}
         {odds && (
           <div className="flex gap-2 mt-1">
-            {(['1', 'X', '2'] as const).map((opt, i) => {
+            {([['1','Hem'], ['X','Oav'], ['2','Bort']] as const).map(([opt, label], i) => {
               const probs = [odds.homeProb, odds.drawProb, odds.awayProb]
               const prob = probs[i]
               const maxProb = Math.max(...probs)
               const isFav = prob === maxProb
               return (
                 <span key={opt} className={`text-xs px-1.5 py-0.5 rounded font-medium ${isFav ? 'bg-yellow-400/20 text-yellow-300 font-bold' : 'bg-white/5 text-white/40'}`}>
-                  {opt} {prob}
+                  {label} {prob}%
                 </span>
               )
             })}
