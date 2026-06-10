@@ -35,7 +35,7 @@ function MatchRow({ match, value, onChange, odds }: {
               const isFav = prob === maxProb
               return (
                 <span key={opt} className={`text-xs px-1.5 py-0.5 rounded font-medium ${isFav ? 'bg-yellow-400/20 text-yellow-300 font-bold' : 'bg-white/5 text-white/40'}`}>
-                  {opt} {prob}%
+                  {opt} {prob}
                 </span>
               )
             })}
